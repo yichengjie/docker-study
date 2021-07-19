@@ -1,4 +1,8 @@
-1. docker学习资料：https://www.docker.tips
+docker学习资料：https://www.docker.tips
+
+### wins安装docker
+
+1. https://www.runoob.com/docker/windows-docker-install.html
 
 ### linux安装docker
 
@@ -15,3 +19,22 @@
 4. 步骤3中如果报docker server没有启动，可以通过命令```sudo systemctl start docker```启动
 
 5. 注意docker的命令如果不是root用户都需要加sudo
+
+6. 直接执行get-docker.sh过程中可能会有些因为网路原因报错，手动执行安装依赖即可
+
+   ```yum -y  install deltarpm 
+   例如：yum -y  install deltarpm 
+   ```
+
+
+### docker常用命令
+
+1. docker exec -it   ${id}   sh
+
+2. 启动mysql： ```docker run -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql```
+
+   ```
+   https://www.cnblogs.com/sablier/p/11605606.html
+   ```
+
+3. 
