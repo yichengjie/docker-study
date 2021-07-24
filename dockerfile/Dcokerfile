@@ -1,0 +1,4 @@
+FROM python:3.6.0
+MAINTAINER deng
+COPY requirements.txt requirements.txt
+RUN pip install -i https://pypi.douban.com/simple -r requirements.txt

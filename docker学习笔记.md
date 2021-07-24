@@ -26,7 +26,6 @@ docker学习资料：https://www.docker.tips
    例如：yum -y  install deltarpm 
    ```
 
-
 ### docker常用命令
 
 1. docker exec -it   ${id}   sh
@@ -37,4 +36,21 @@ docker学习资料：https://www.docker.tips
    https://www.cnblogs.com/sablier/p/11605606.html
    ```
 
-3. 
+3. 清空所有停用的镜像
+    ```text
+    docker system prune -f
+    ```
+4. 运行并自动删除镜像
+    ```text
+    docker container run --rm -it gcc-demo-new yicj
+    ```
+### docker使用技巧
+1. 合理使用cache（尽量将变化的东西放到后面）
+2. 编写.dockerignore文件忽略文件
+3. 多阶段构建
+4. 尽量使用非root用户
+
+### 学习资料
+1. 官网dockerfile学习：https://docs.docker.com/engine/reference/builder/
+2. github上docker-library/official-images
+
