@@ -54,3 +54,7 @@ docker学习资料：https://www.docker.tips
 1. 官网dockerfile学习：https://docs.docker.com/engine/reference/builder/
 2. github上docker-library/official-images
 
+### 其他
+1. 更新wsl： https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi下载安装
+2. 安装zsh：sudo apt-get install zsh
+
