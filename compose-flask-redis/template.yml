@@ -1,0 +1,14 @@
+version: "3.8"
+services: # 容器
+  servicename: # 服务名字，这个名字也是内部 bridge网络可以使用的 DNS name
+    image: # 镜像的名字
+    command: # 可选，如果设置，则会覆盖默认镜像里的 CMD命令
+    environment: # 可选，相当于 docker run里的 --env
+    volumes: # 可选，相当于docker run里的 -v
+    networks: # 可选，相当于 docker run里的 --network
+    ports: # 可选，相当于 docker run里的 -p
+  servicename2:
+
+volumes: # 可选，相当于 docker volume create
+
+networks: # 可选，相当于 docker network create
