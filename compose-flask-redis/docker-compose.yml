@@ -15,11 +15,11 @@ services:
     image: redis:latest
     networks: 
       - demo-network
-  busybox: 
-    image: busybox:latest
-    command: sh -c "while true; do sleep 3600; done"
-    networks: 
-      - demo-network
+  # busybox: 
+  #   image: busybox:latest
+  #   command: sh -c "while true; do sleep 3600; done"
+  #   networks: 
+  #     - demo-network
 
 networks: 
   demo-network: 
