@@ -6,3 +6,8 @@ services: # 容器
     container_name: my_redis
     ports: 
       - 6379:6379
+    volumes:
+      - D:/data/docker/redis/data:/data
+volumes:
+  data:
+    driver: local
