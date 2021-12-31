@@ -6,12 +6,23 @@ services:
     container_name: elasticsearch
     networks:
       - netes
-    volumes:
-      - ../data/elasticsearch/data:/usr/share/elasticsearch/data
     environment:
       - discovery.type=single-node
     ports:
       - "9200:9200"
+      - "9300:9300"
+  elastichd:
+    image: happylay/elastichd:1.4.1
+    container_name: elasticsearch-hd
+    networks:
+      - netes
+    ports: 
+      - "9900:9800"
+    depends_on:
+      - "elasticsearch"
+    links: 
+      - "elasticsearch:demo"
+
 #这里要注意，es和eshd要在相同网络才能被links
 networks: 
   netes:
