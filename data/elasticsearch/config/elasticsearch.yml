@@ -25,15 +25,15 @@ discovery.type: single-node
 #discovery.zen.minimum_master_nodes: 1
 #初始化主节点
 #cluster.initial_master_nodes: ["es-node-1"]  #本地只有一个节点,无法正常启动,先注释
-index: 
-  analysis: 
-    analyzer: 
-      ik: 
-        alias: [ik_analyzer]
-        type: org.elasticsearch.index.analysis.IkAnalyzerProvider
-      ik_max_word: 
-        type: ik
-        use_smart: false
-      ik_smart: 
-        type: ik
-        use_smart: tru
+# index: 
+#   analysis: 
+#     analyzer: 
+#       ik: 
+#         alias: [ik_analyzer]
+#         type: org.elasticsearch.index.analysis.IkAnalyzerProvider
+#       ik_max_word: 
+#         type: ik
+#         use_smart: false
+#       ik_smart: 
+#         type: ik
+#         use_smart: true
