@@ -5,7 +5,7 @@ node.name: es-node-1
 # 绑定host，0.0.0.0代表当前节点的ip
 network.host: 0.0.0.0
 # 设置其它节点和该节点交互的ip地址，如果不设置它会自动判断，值必须是个真实的ip地址(本机ip)
-network.publish_host: 192.168.200.135
+#network.publish_host: 192.168.200.135
 # 设置对外服务的http端口，默认为9200
 http.port: 9200
 # 设置节点间交互的tcp端口，默认是9300
