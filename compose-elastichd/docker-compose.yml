@@ -21,7 +21,7 @@ services:
     networks:
       - netes
     ports: 
-      - "9900:9800"
+      - "9800:9800"
     depends_on:
       - "elasticsearch"
     links: 
