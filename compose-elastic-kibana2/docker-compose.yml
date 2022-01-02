@@ -1,0 +1,49 @@
+version: "3.8"
+
+services: 
+  elasticsearch:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: elasticsearch:7.6.3
+    container_name: elasticsearch
+    networks:
+      - netes
+    #environment:
+    #  - discovery.type=single-node
+    volumes:
+      - ../data/elasticsearch/data:/usr/share/elasticsearch/data
+      - ../data/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      #- ../data/elasticsearch/config:/usr/share/elasticsearch/config
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+  kibana:
+    image: kibana:7.6.2
+    container_name: kibana
+    networks:
+      - netes
+    volumes:
+      - ../data/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    depends_on:
+      - "elasticsearch"
+    links:
+      - "elasticsearch:es1"
+  elastichd:
+    image: happylay/elastichd:1.4.1
+    container_name: elasticsearch-hd
+    networks:
+      - netes
+    ports: 
+      - "9800:9800"
+    depends_on:
+      - "elasticsearch"
+    links: 
+      - "elasticsearch:es1"
+
+#这里要注意，es和eshd要在相同网络才能被links
+networks: 
+  netes:
+    external: false 

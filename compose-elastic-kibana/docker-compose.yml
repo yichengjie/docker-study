@@ -10,7 +10,6 @@ services:
     #  - discovery.type=single-node
     volumes:
       - ../data/elasticsearch/data:/usr/share/elasticsearch/data
-      - ../data/elasticsearch/plugins:/usr/share/elasticsearch/plugins
       - ../data/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - "9200:9200"
@@ -27,7 +26,19 @@ services:
     depends_on:
       - "elasticsearch"
     links:
-      - "elasticsearch:kibana"
+      - "elasticsearch:es1"
+  elastichd:
+    image: happylay/elastichd:1.4.1
+    container_name: elasticsearch-hd
+    networks:
+      - netes
+    ports: 
+      - "9800:9800"
+    depends_on:
+      - "elasticsearch"
+    links: 
+      - "elasticsearch:es1"
+
 #这里要注意，es和eshd要在相同网络才能被links
 networks: 
   netes:
